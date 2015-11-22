@@ -7,6 +7,29 @@
 - FANN Library (http://leenissen.dk/fann/wp)
 - MNIST Dataset (http://yann.lecun.com/exdb/mnist)
 
+## Clone and Compile
+
+Ex. 
+```shell
+[root@cobalt repos]# git clone https://github.com/DeLaSalleUniversity-Manila/ArtificialNeuralNetworkWithFANNonMNIST.git
+Cloning into 'ArtificialNeuralNetworkWithFANNonMNIST'...
+remote: Counting objects: 32, done.
+remote: Compressing objects: 100% (22/22), done.
+remote: Total 32 (delta 9), reused 28 (delta 8), pack-reused 0
+Unpacking objects: 100% (32/32), done.
+[root@cobalt repos]# cd ArtificialNeuralNetworkWithFANNonMNIST/
+[root@cobalt ArtificialNeuralNetworkWithFANNonMNIST]# ls
+dataset  error_data.dat  Makefile  network.nn  README.md  src  training.data
+[root@cobalt ArtificialNeuralNetworkWithFANNonMNIST]# make
+g++ src/train.cpp  -lfann -o train
+g++ src/test.cpp  -lfann -o test
+g++ src/convert.cpp  -o convert
+g++ src/bulk-test.cpp  -lfann -o bulk-test
+[root@cobalt ArtificialNeuralNetworkWithFANNonMNIST]# ls
+bulk-test  dataset         Makefile    README.md  test   training.data
+convert    error_data.dat  network.nn  src        train
+```
+
 ## Step 1: Convert MNIST format into a FANN readable training file.
 
 Ex.
